@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo"><span class="nav-logo-badge">MC</span><span>Marketers Club</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+      <div class="nav-links">
+        <a href="/events.html">Events</a>
+        <a href="/hire-marketers.html">Hire Marketers</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/sign-in.html" class="btn btn-sm">Member Login</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container section has-stickers">
+    <div class="float-stickers" aria-hidden="true">
+      <span class="float-sticker" style="--rot:-10deg;--dur:6.3s;--delay:-1.4s;top:4.5rem;right:10%">📸</span>
+      <span class="float-sticker sm" style="--rot:12deg;--dur:5.7s;--delay:-3.3s;top:8.5rem;right:26%">💡</span>
+    </div>
+    <div style="margin-bottom: 2rem;">
+      <span class="pill">✦ Editorial</span>
+      <h1>Blog</h1>
+      <div class="tag-bar" id="blog-tags" style="margin-top: 1.5rem;">
+        <a href="/blog.html" class="tag active" data-tag="">All</a>
+        <a href="/blog.html?tag=Growth%20Marketing" class="tag" data-tag="Growth Marketing">Growth Marketing</a>
+        <a href="/blog.html?tag=Content" class="tag" data-tag="Content">Content</a>
+        <a href="/blog.html?tag=Ad%20Copywriting" class="tag" data-tag="Ad Copywriting">Ad Copywriting</a>
+        <a href="/blog.html?tag=Marketing%20Analytics" class="tag" data-tag="Marketing Analytics">Marketing Analytics</a>
+        <a href="/blog.html?tag=AI%20Tools" class="tag" data-tag="AI Tools">AI Tools</a>
+      </div>
+    </div>
+    <div class="grid grid-3" id="blog-list"></div>
+  </main>
+  <script type="module" src="/assets/js/blog.bundle.js"></script>
+</body>
+</html>

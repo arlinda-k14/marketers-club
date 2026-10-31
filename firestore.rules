@@ -1,0 +1,186 @@
+rules_version = '2';
+// The live site has no server: browsers read and write Firestore directly (src/services/api.js),
+// so these rules are the only thing standing between a visitor and the data. Keep them strict.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+    // Admins are listed in /admins/{uid}; there is no way to add yourself (no write rule).
+    function isAdmin() {
+      return signedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+    function verified() {
+      return signedIn() && request.auth.token.email_verified == true;
+    }
+    function incoming() {
+      return request.resource.data;
+    }
+    function unchanged(keys) {
+      return !incoming().diff(resource.data).affectedKeys().hasAny(keys);
+    }
+    // Profile photos are stored inline as small data URLs (no paid file storage).
+    function avatarOk() {
+      return !('avatar' in incoming()) || (incoming().avatar is string && incoming().avatar.size() < 400000);
+    }
+
+    match /admins/{uid} {
+      allow get: if isOwner(uid);
+    }
+
+    // Members can edit their own profile but never their role, plan or seed markers.
+    match /users/{uid} {
+      allow read: if isOwner(uid) || isAdmin();
+      allow create: if isOwner(uid)
+        && incoming().role == 'member'
+        && incoming().membershipTier == 'free'
+        && !('seeded' in incoming())
+        && avatarOk();
+      allow update: if isAdmin()
+        || (isOwner(uid) && unchanged(['role', 'membershipTier', 'seeded', 'uid']) && avatarOk());
+      allow delete: if isAdmin();
+    }
+
+    // Hire Marketers listings: public once approved. Members create their own listing as
+    // 'pending'; only admins approve, reject or verify. Contact emails live in marketer_private.
+    match /marketer_profiles/{id} {
+      allow read: if resource.data.status == 'approved' || isOwner(id) || isAdmin();
+      allow create: if isOwner(id)
+        && incoming().status == 'pending'
+        && incoming().verified == false
+        && incoming().memberUid == request.auth.uid
+        && !('email' in incoming())
+        && avatarOk();
+      allow update: if isAdmin()
+        || (isOwner(id)
+          && incoming().verified == resource.data.verified
+          && incoming().memberUid == resource.data.memberUid
+          && unchanged(['reviewedBy', 'reviewedAt'])
+          && (incoming().status == resource.data.status
+            || (resource.data.status == 'rejected' && incoming().status == 'pending'))
+          && !('email' in incoming())
+          && avatarOk());
+      allow delete: if isOwner(id) || isAdmin();
+    }
+
+    match /marketer_private/{id} {
+      allow read: if signedIn();
+      allow create, update: if (isOwner(id) || isAdmin())
+        && incoming().keys().hasOnly(['email'])
+        && incoming().email is string && incoming().email.size() <= 200;
+      allow delete: if isOwner(id) || isAdmin();
+    }
+
+    match /articles/{id} {
+      allow read: if resource.data.status == 'published'
+        || isAdmin()
+        || (signedIn() && resource.data.authorId == request.auth.uid);
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Members submit events for review; admins approve them.
+    match /events/{id} {
+      allow read: if resource.data.status == 'approved'
+        || isAdmin()
+        || (signedIn() && resource.data.submittedBy == request.auth.uid);
+      allow create: if signedIn()
+        && incoming().status == 'pending'
+        && incoming().submittedBy == request.auth.uid
+        && !('speakerId' in incoming());
+      allow update, delete: if isAdmin();
+    }
+
+    match /newsletter_issues/{id} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Anyone can subscribe (create only). Nobody but admins can read the list.
+    match /newsletter_subsribers/{email} {
+      allow create: if incoming().keys().hasOnly(['email', 'subscribedAt'])
+        && incoming().email == email
+        && email.size() <= 200
+        && email.matches('^[^@\\s/]+@[^@\\s/]+\\.[^@\\s/]+$');
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Door 2: anyone may drop a contact message; nobody in a browser reads it back
+    // except admins (Contact triage panel), who may only approve, skip or review the
+    // reply. The CCO's Triage Agent (~/.hubsy, `npm run triage`) reads these and writes
+    // customers with Arlinda's own Google login, which rules do not apply to.
+    match /customer_messages/{id} {
+      allow create: if incoming().keys().hasOnly(['source', 'name', 'businessName', 'email', 'message', 'receivedAt'])
+        && incoming().keys().hasAll(['source', 'email', 'message', 'receivedAt'])
+        && incoming().source == 'contact_form'
+        && incoming().receivedAt == request.time
+        && incoming().email is string
+        && incoming().email.size() <= 200
+        && incoming().email.matches('^[^@\\s/]+@[^@\\s/]+\\.[^@\\s/]+$')
+        && incoming().message is string
+        && incoming().message.size() > 0
+        && incoming().message.size() <= 4000
+        && (!('name' in incoming()) || (incoming().name is string && incoming().name.size() <= 120))
+        && (!('businessName' in incoming()) || (incoming().businessName is string && incoming().businessName.size() <= 160));
+      allow read: if isAdmin();
+      allow update: if isAdmin()
+        && incoming().diff(resource.data).affectedKeys().hasOnly(['reply', 'review']);
+    }
+    match /customers/{id} {
+      allow read: if isAdmin();
+    }
+
+    match /contact_inquiries/{id} {
+      allow create: if signedIn()
+        && incoming().fromUid == request.auth.uid
+        && incoming().keys().hasOnly(['marketerId', 'fromUid', 'fromEmail', 'message', 'createdAt'])
+        && incoming().message is string && incoming().message.size() <= 5000;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Forum: members read; verified members post. A reply may only add 1 to commentCount.
+    match /discussions/{discussionId} {
+      allow read: if signedIn();
+      allow create: if verified()
+        && incoming().authorUid == request.auth.uid
+        && incoming().commentCount == 0;
+      allow update: if isAdmin()
+        || (verified()
+          && incoming().diff(resource.data).affectedKeys().hasOnly(['commentCount'])
+          && incoming().commentCount == resource.data.commentCount + 1);
+      allow delete: if isAdmin();
+
+      match /comments/{commentId} {
+        allow create: if verified()
+          && incoming().authorUid == request.auth.uid
+          && incoming().discussionId == discussionId;
+        allow update, delete: if isAdmin();
+      }
+    }
+    // Lets a member list their own replies across all threads (collection group query).
+    match /{path=**}/comments/{commentId} {
+      allow read: if signedIn();
+    }
+
+    match /courses/{courseId} {
+      allow read: if signedIn();
+    }
+    match /resources/{resourceId} {
+      allow read: if signedIn();
+    }
+    match /mentors/{mentorId} {
+      allow read: if signedIn();
+    }
+    match /certificates/{certId} {
+      allow read: if signedIn() && resource.data.uid == request.auth.uid;
+    }
+    match /jobs/{jobId} {
+      allow read: if signedIn() && resource.data.ownerUid == request.auth.uid;
+    }
+    match /courseWaitlist/{courseId} {
+      allow read, write: if signedIn();
+    }
+  }
+}

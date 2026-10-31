@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-badge">MC</span>
+        <span><strong>Marketers Club</strong></span>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+      <div class="nav-links">
+        <a href="/dashboard.html" aria-current="page">Dashboard</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/forum.html">Forum</a>
+        <a href="/mentors.html">Mentors</a>
+        <a href="/tools.html">Tools</a>
+        <a href="/profile.html">Profile</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mh" id="mh-root" aria-busy="true">
+    <section class="card mh-hero" aria-labelledby="mh-title">
+      <div class="mh-hero-text">
+        <div class="mh-badges">
+          <span class="mh-greeting" id="mh-greeting">Hello</span>
+          <span class="mh-tier" id="mh-tier" hidden></span>
+        </div>
+        <h1 id="mh-title">Welcome back</h1>
+        <p class="mh-lede" id="mh-lede">Here is what is happening in the club.</p>
+        <nav class="mh-actions" aria-label="Quick actions">
+          <a class="btn btn-ink" href="/admin-panel.html">Write an article</a>
+          <a class="btn ghost" href="/forum.html">Start a discussion</a>
+          <a class="btn ghost" href="/mentors.html">Browse mentors</a>
+        </nav>
+      </div>
+      <a class="mh-hero-avatar" href="/profile.html" aria-label="Open your profile">
+        <img id="mh-avatar" alt="" hidden>
+        <span id="mh-initials" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <section class="mh-section" aria-labelledby="mh-events-title">
+      <div class="mh-section-head">
+        <h2 id="mh-events-title">Upcoming events &amp; workshops</h2>
+        <a class="mh-more" href="/events.html">All events</a>
+      </div>
+      <div id="mh-events" class="mh-events"></div>
+    </section>
+
+    <div class="mh-split">
+      <section class="mh-section" aria-labelledby="mh-articles-title">
+        <div class="mh-section-head">
+          <h2 id="mh-articles-title">Latest from the editorial</h2>
+          <a class="mh-more" href="/blog.html">The blog</a>
+        </div>
+        <div id="mh-articles" class="mh-articles"></div>
+      </section>
+
+      <section class="mh-section" aria-labelledby="mh-forum-title">
+        <div class="mh-section-head">
+          <h2 id="mh-forum-title">Trending in the forum</h2>
+          <a class="mh-more" href="/forum.html">Forum</a>
+        </div>
+        <ul id="mh-forum" class="mh-threads"></ul>
+      </section>
+    </div>
+
+    <section class="mh-section" aria-labelledby="mh-toolkit-title">
+      <div class="mh-section-head">
+        <h2 id="mh-toolkit-title">Member toolkit</h2>
+        <a class="mh-more" href="/resources.html">Resource library</a>
+      </div>
+      <div id="mh-toolkit" class="mh-toolkit"></div>
+      <div class="mh-saved" id="mh-saved"></div>
+    </section>
+  </main>
+
+  <div id="mh-toast" class="mp-toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/assets/js/dashboard.bundle.js"></script>
+</body>
+</html>

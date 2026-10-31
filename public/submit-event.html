@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Event — Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo"><span class="nav-logo-badge">MC</span><span>Marketers Club</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+      <div class="nav-links">
+        <a href="/events.html">Events</a>
+        <a href="/hire-marketers.html">Hire Marketers</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/sign-in.html" class="btn btn-sm">Member Login</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container section" style="max-width: 800px;">
+    <div style="margin-bottom: 2rem;">
+      <span class="pill">✦ Member Submission</span>
+      <h1 style="margin-top: 1rem;">Submit Event</h1>
+      <p style="color: var(--text-muted);">Any registered member can submit. New events save with status pending and stay hidden until an admin approves them.</p>
+    </div>
+    <div class="card">
+      <form id="submit-event-form">
+        <div class="form-group"><label>Title</label><input name="title" required></div>
+        <div class="form-group"><label>Host Name</label><input name="hostName" required></div>
+        <div class="grid grid-2">
+          <div class="form-group"><label>Date</label><input type="date" name="date" required></div>
+          <div class="form-group"><label>Time</label><input type="time" name="time" required></div>
+        </div>
+        <div class="form-group"><label>Timezone</label><input name="timezone" placeholder="UTC" required></div>
+        <div class="form-group"><label>Meeting Link or Venue Location</label><input name="meetingLink" placeholder="https://example.com/meeting or Venue name"></div>
+        <div class="form-group"><label>Description</label><textarea name="description" required></textarea></div>
+        <div class="form-group"><label>Category Tags (comma separated)</label><input name="categoryTags" placeholder="Growth Marketing, SEO"></div>
+        <div class="form-group"><label>Maximum Attendee Capacity (optional)</label><input type="number" name="capacity"></div>
+        <button type="submit" class="btn">Submit for Review</button>
+      </form>
+      <p id="submit-status" style="margin-top: 1rem;"></p>
+    </div>
+  </main>
+  <script type="module" src="/assets/js/submit-event.bundle.js"></script>
+</body>
+</html>

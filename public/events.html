@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events — Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo"><span class="nav-logo-badge">MC</span><span>Marketers Club</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+      <div class="nav-links">
+        <a href="/events.html">Events</a>
+        <a href="/hire-marketers.html">Hire Marketers</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/sign-in.html" class="btn btn-sm">Member Login</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container section">
+    <div class="has-stickers" style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+      <div class="float-stickers" aria-hidden="true">
+        <span class="float-sticker" style="--rot:-10deg;--dur:6.3s;--delay:-1.4s;top:4.2rem;right:8%">💡</span>
+        <span class="float-sticker sm" style="--rot:12deg;--dur:5.7s;--delay:-3.3s;top:3.9rem;right:30%">📸</span>
+      </div>
+      <span class="pill">✦ Workshops & Sessions</span>
+      <h1>Events</h1>
+      <div style="display: flex; gap: .6rem; flex-wrap: wrap;">
+        <button class="btn btn-sm" id="tab-upcoming">Upcoming Events</button>
+        <button class="btn ghost btn-sm" id="tab-past">Past Sessions</button>
+        <a href="/submit-event.html" class="btn btn-sm" style="margin-left: auto;">Submit Event</a>
+      </div>
+    </div>
+    <div class="grid grid-3" id="events-list"></div>
+    <div id="events-empty" class="status-panel" style="display:none;">
+      <h3>No events</h3>
+      <p style="color: var(--text-muted);">Check back soon.</p>
+    </div>
+  </main>
+  <script type="module" src="/assets/js/events.bundle.js"></script>
+</body>
+</html>

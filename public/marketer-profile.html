@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketer Profile — Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo"><span class="nav-logo-badge">MC</span><span>Marketers Club</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+      <div class="nav-links">
+        <a href="/events.html">Events</a>
+        <a href="/hire-marketers.html">Hire Marketers</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/sign-in.html" class="btn btn-sm">Member Login</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container section">
+    <div id="profile-header"></div>
+    <div class="grid grid-2" style="margin-top: 2rem;">
+      <div class="card">
+        <h3 style="margin-bottom: 1rem;">About</h3>
+        <p id="profile-bio" style="color: var(--text-muted);"></p>
+        <div style="display: grid; gap: .8rem; margin-top: 1.5rem;">
+          <div><strong>Experience:</strong> <span id="profile-exp"></span> years</div>
+          <div><strong>Rate:</strong> <span id="profile-rate"></span></div>
+          <div><strong>Specialties:</strong> <span id="profile-specs"></span></div>
+          <div id="profile-links"></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom: 1rem;">Contact</h3>
+        <p id="profile-contact-note" style="color: var(--text-muted); margin-bottom: 1rem;">Creating an event, viewing a marketer's direct contact email, and contacting a marketer all require free account registration.</p>
+        <div id="profile-contact" style="display:none;">
+          <p style="margin-bottom: 1rem;"><strong>Direct contact:</strong> <span id="profile-email"></span></p>
+          <form id="inquiry-form">
+            <div class="form-group">
+              <label>Message</label>
+              <textarea name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Inquiry</button>
+          </form>
+          <p id="inquiry-status" style="margin-top: 1rem;"></p>
+        </div>
+        <div id="profile-gate">
+          <a href="/sign-in.html" class="btn">Register to Contact</a>
+        </div>
+      </div>
+    </div>
+    <section id="profile-featured" style="display: none; margin-top: 3rem;">
+      <span class="sticker">Featured on Marketers Club</span>
+      <h2 style="margin: 1rem 0 1.5rem;">Featured work</h2>
+      <div class="grid grid-2" style="align-items: start;">
+        <div id="profile-featured-articles-group" style="display: none;">
+          <h3 style="margin-bottom: 1rem;">Articles</h3>
+          <div class="grid" id="profile-featured-articles"></div>
+        </div>
+        <div id="profile-featured-events-group" style="display: none;">
+          <h3 style="margin-bottom: 1rem;">Workshops &amp; events</h3>
+          <div class="grid" id="profile-featured-events"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/assets/js/marketer-profile.bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Growth Tools - Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-badge">MC</span>
+        <span><strong>Marketers Club</strong></span>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+      <div class="nav-links">
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/forum.html">Forum</a>
+        <a href="/mentors.html">Mentors</a>
+        <a href="/tools.html">Tools</a>
+        <a href="/profile.html">Profile</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container has-stickers">
+    <div class="float-stickers" aria-hidden="true">
+      <span class="float-sticker" style="--rot:-10deg;--dur:6.3s;--delay:-1.4s;top:.9rem;right:8%">🔋</span>
+      <span class="float-sticker sm" style="--rot:12deg;--dur:5.7s;--delay:-3.3s;top:1.1rem;right:24%">🖥️</span>
+    </div>
+    <h1 style="margin: 2rem 0;">Automated Growth Tools</h1>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Headline Generator</h3>
+        <textarea id="input1" placeholder="Enter input with numbers if needed..."></textarea>
+        <button class="btn btn-sm" onclick="runTool('headline', 'input1', 'out1')">Generate</button>
+        <pre id="out1" style="margin-top: 1rem; white-space: pre-wrap;"></pre>
+      </div>
+      <div class="card">
+        <h3>Email Brief Builder</h3>
+        <textarea id="input2" placeholder="Enter input..."></textarea>
+        <button class="btn btn-sm" onclick="runTool('email_brief', 'input2', 'out2')">Build</button>
+        <pre id="out2" style="margin-top: 1rem; white-space: pre-wrap;"></pre>
+      </div>
+      <div class="card">
+        <h3>Social Post Formatter</h3>
+        <textarea id="input3" placeholder="Enter input..."></textarea>
+        <button class="btn btn-sm" onclick="runTool('social_post', 'input3', 'out3')">Format</button>
+        <pre id="out3" style="margin-top: 1rem; white-space: pre-wrap;"></pre>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/assets/js/tools.bundle.js"></script>
+  <script>
+    window.runTool = async function(type, inputId, outId) {
+      const input = document.getElementById(inputId).value;
+      const out = document.getElementById(outId);
+      if (!window.toolsAvailable) {
+        out.textContent = 'The AI growth tools are coming soon on the live site.';
+        return;
+      }
+      out.textContent = 'Processing...';
+      try {
+        const token = await window.getToken();
+        const res = await fetch('/api/tools/jobs', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+          body: JSON.stringify({ type, input })
+        });
+        if (res.status === 403) {
+          out.textContent = 'Limit reached or pro required check failed.';
+          return;
+        }
+        const data = await res.json();
+        const jobId = data.jobId;
+        // Poll job
+        const interval = setInterval(async () => {
+          const jres = await fetch(`/api/tools/jobs/${jobId}`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+          });
+          const jdata = await jres.json();
+          if (jdata.job.status === 'completed') {
+            clearInterval(interval);
+            out.textContent = jdata.job.result;
+          } else if (jdata.job.status === 'failed') {
+            clearInterval(interval);
+            out.textContent = 'Error: ' + jdata.job.error;
+          }
+        }, 500);
+      } catch (e) {
+        out.textContent = 'Error: ' + e.message;
+      }
+    };
+  </script>
+</body>
+</html>

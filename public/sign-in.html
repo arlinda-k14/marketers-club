@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-badge">MC</span>
+        <span><strong>Marketers Club</strong></span>
+      </a>
+    </div>
+  </nav>
+  <main class="container" style="max-width: 500px; padding-top: 3rem;">
+    <div class="card">
+      <h1 style="margin-bottom: 0.5rem;">Sign In</h1>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Access requires a free account</p>
+      <div id="notice" style="background: #fef3c7; padding: 0.75rem; border-radius: var(--r); margin-bottom: 1rem; font-size: 0.9rem;">
+        Note: Access requires a free account
+      </div>
+      <button id="googleSignIn" class="btn" style="width: 100%; margin-bottom: 1rem;">Sign in with Google</button>
+      <form id="emailForm">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <button type="submit" class="btn" style="width: 100%;">Sign in with Email</button>
+      </form>
+    </div>
+  </main>
+  <script type="module" src="/assets/js/sign-in.bundle.js"></script>
+</body>
+</html>

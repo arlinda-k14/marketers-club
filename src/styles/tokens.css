@@ -1,0 +1,54 @@
+/* Editorial Creator Studio / Aesthetic Content Club Design System */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap');
+
+:root {
+  --paper: #FAF8F5;
+  --paper-2: #F4F1EA;
+  --linen: #F4F1EA;
+  --cream: #FAF8F5;
+  --ivory: #F7F6F2;
+  
+  --ink: #1A1715;
+  --charcoal: #1A1715;
+  --espresso: #1A1715;
+  --text: #1A1715;
+  --text-muted: #6B635A;
+  
+  --card: rgba(255, 255, 255, 0.72);
+  --card-solid: #FFFFFF;
+  --card-frost: rgba(255, 255, 255, 0.7);
+  
+  --line: rgba(26, 23, 21, 0.08);
+  --line-strong: rgba(26, 23, 21, 0.12);
+  
+  --accent: #3B82F6;
+  --accent-periwinkle: #60A5FA;
+  --accent-blue: #3B82F6;
+  --accent-hover: #2563EB;
+  --on-accent: #FFFFFF;
+  
+  --sand: #F5F3EE;
+  --butter: #F5F1E8;
+  --warm-sand: #EDE7DF;
+  
+  --sticker-yellow: #FEF3C7;
+  
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-accent: "Caveat", cursive;
+  
+  --max: 1240px;
+  --pad: clamp(1.25rem, 5vw, 3rem);
+  --gap: clamp(1.25rem, 2.6vw, 2rem);
+  --sp: clamp(3.5rem, 10vw, 7rem);
+  
+  --r-sm: 12px;
+  --r: 18px;
+  --r-lg: 28px;
+  --r-pill: 9999px;
+  
+  --shadow: 0 1px 2px rgba(26, 23, 21, 0.02), 0 4px 12px rgba(26, 23, 21, 0.04);
+  --shadow-soft: 0 1px 1px rgba(26, 23, 21, 0.01), 0 8px 24px rgba(26, 23, 21, 0.06);
+  --shadow-lift: 0 2px 4px rgba(26, 23, 21, 0.03), 0 20px 60px rgba(26, 23, 21, 0.08);
+  --shadow-frost: 0 8px 32px rgba(26, 23, 21, 0.06);
+}

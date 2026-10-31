@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hire Marketers — Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo"><span class="nav-logo-badge">MC</span><span>Marketers Club</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+      <div class="nav-links">
+        <a href="/events.html">Events</a>
+        <a href="/hire-marketers.html">Hire Marketers</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/sign-in.html" class="btn btn-sm">Member Login</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container section">
+    <div class="has-stickers" style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+      <div class="float-stickers" aria-hidden="true">
+        <span class="float-sticker" style="--rot:-10deg;--dur:6.3s;--delay:-1.4s;top:4.2rem;right:8%">❤️</span>
+        <span class="float-sticker sm" style="--rot:12deg;--dur:5.7s;--delay:-3.3s;top:3.9rem;right:30%">🖥️</span>
+      </div>
+      <span class="pill">✦ Directory</span>
+      <h1>Hire Marketers</h1>
+      <p style="color: var(--text-muted); max-width: 720px;">Profiles ranked by completion score and verification status, then recent activity.</p>
+      <div><a href="/profile.html#listing" class="btn btn-sm">List your profile</a></div>
+      <div class="tag-bar" id="specialty-filter">
+        <a href="/hire-marketers.html" class="tag active" data-specialty="">All</a>
+        <a href="/hire-marketers.html?specialty=performance%20marketing" class="tag" data-specialty="performance marketing">Performance Marketing</a>
+        <a href="/hire-marketers.html?specialty=content" class="tag" data-specialty="content">Content</a>
+        <a href="/hire-marketers.html?specialty=SEO" class="tag" data-specialty="SEO">SEO</a>
+        <a href="/hire-marketers.html?specialty=marketing%20analytics" class="tag" data-specialty="marketing analytics">Marketing Analytics</a>
+        <a href="/hire-marketers.html?specialty=ad%20copywriting" class="tag" data-specialty="ad copywriting">Ad Copywriting</a>
+        <a href="/hire-marketers.html?specialty=AI%20tools" class="tag" data-specialty="AI tools">AI Tools</a>
+        <a href="/hire-marketers.html?specialty=brand%20strategy" class="tag" data-specialty="brand strategy">Brand Strategy</a>
+        <a href="/hire-marketers.html?specialty=creative%20direction" class="tag" data-specialty="creative direction">Creative Direction</a>
+        <a href="/hire-marketers.html?specialty=creator%20strategy" class="tag" data-specialty="creator strategy">Creator Strategy</a>
+        <a href="/hire-marketers.html?specialty=growth%20marketing" class="tag" data-specialty="growth marketing">Growth Marketing</a>
+      </div>
+    </div>
+    <div class="grid grid-2" id="marketers-list"></div>
+    <div id="marketers-empty" class="status-panel" style="display:none;">
+      <h3>No profiles found</h3>
+      <p style="color: var(--text-muted);">Try adjusting the filter.</p>
+    </div>
+  </main>
+  <script type="module" src="/assets/js/hire-marketers.bundle.js"></script>
+</body>
+</html>

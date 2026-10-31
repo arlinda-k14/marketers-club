@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-badge">MC</span>
+        <span><strong>Marketers Club</strong></span>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+      <div class="nav-links">
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/forum.html">Forum</a>
+        <a href="/mentors.html">Mentors</a>
+        <a href="/tools.html">Tools</a>
+        <a href="/profile.html">Profile</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container has-stickers">
+    <div class="float-stickers" aria-hidden="true">
+      <span class="float-sticker" style="--rot:-10deg;--dur:6.3s;--delay:-1.4s;top:4.5rem;right:10%">💡</span>
+      <span class="float-sticker sm" style="--rot:12deg;--dur:5.7s;--delay:-3.3s;top:8.5rem;right:26%">🔋</span>
+    </div>
+    <h1 style="margin: 2rem 0;">Course Tracks</h1>
+    <div class="grid grid-3">
+      <div class="card"><h3>Foundations</h3><a href="/course-view.html?track=foundations" class="btn btn-sm">View</a></div>
+      <div class="card"><h3>Advanced Strategy</h3><a href="/course-view.html?track=advanced" class="btn btn-sm">View</a></div>
+      <div class="card"><h3>Freelancing</h3><a href="/course-view.html?track=freelancing" class="btn btn-sm">View</a></div>
+      <div class="card"><h3>Social Media</h3><a href="/course-view.html?track=social" class="btn btn-sm">View</a></div>
+      <div class="card"><h3>SEO</h3><a href="/course-view.html?track=seo" class="btn btn-sm">View</a></div>
+    </div>
+  </main>
+  <script type="module" src="/assets/js/courses.bundle.js"></script>
+</body>
+</html>

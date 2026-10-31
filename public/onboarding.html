@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Onboarding - Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-badge">MC</span>
+        <span><strong>Marketers Club</strong></span>
+      </a>
+    </div>
+  </nav>
+  <main class="container" style="max-width: 700px; padding-top: 2rem;">
+    <div class="card">
+      <h1 style="margin-bottom: 1.5rem;">Complete Your Profile</h1>
+      <form id="onboardingForm">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" name="fullName" required>
+        </div>
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label>Current Role *</label>
+          <input type="text" name="currentRole" required>
+        </div>
+        <div class="form-group">
+          <label>Years of Experience *</label>
+          <input type="text" name="yearsExperience" required>
+        </div>
+        <div class="form-group">
+          <label>Primary Goal *</label>
+          <input type="text" name="primaryGoal" required>
+        </div>
+        <div class="form-group">
+          <label>Target Skill *</label>
+          <input type="text" name="targetSkill" required>
+        </div>
+        <div class="form-group">
+          <label>Portfolio URL</label>
+          <input type="url" name="portfolioUrl">
+        </div>
+        <div class="form-group">
+          <label>Referral Source</label>
+          <input type="text" name="referralSource">
+        </div>
+        <button type="submit" class="btn">Complete Onboarding</button>
+      </form>
+    </div>
+  </main>
+  <script type="module" src="/assets/js/onboarding.bundle.js"></script>
+</body>
+</html>

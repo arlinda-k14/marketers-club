@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forum - Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-badge">MC</span>
+        <span><strong>Marketers Club</strong></span>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+      <div class="nav-links">
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/forum.html">Forum</a>
+        <a href="/mentors.html">Mentors</a>
+        <a href="/tools.html">Tools</a>
+        <a href="/profile.html">Profile</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container has-stickers">
+    <div class="float-stickers" aria-hidden="true">
+      <span class="float-sticker" style="--rot:-10deg;--dur:6.3s;--delay:-1.4s;top:.9rem;right:8%">❤️</span>
+      <span class="float-sticker sm" style="--rot:12deg;--dur:5.7s;--delay:-3.3s;top:1.1rem;right:24%">📸</span>
+    </div>
+    <h1 style="margin: 2rem 0;">Community Forum</h1>
+    <div class="card" style="margin-bottom: 2rem;">
+      <h3>Create Discussion</h3>
+      <form id="discForm">
+        <div class="form-group">
+          <input type="text" id="discTitle" placeholder="Title" required>
+        </div>
+        <div class="form-group">
+          <textarea id="discContent" placeholder="Content" required></textarea>
+        </div>
+        <button type="submit" class="btn">Post</button>
+      </form>
+    </div>
+    <div id="discussions"></div>
+  </main>
+  <script type="module" src="/assets/js/forum.bundle.js"></script>
+</body>
+</html>

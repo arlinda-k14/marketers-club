@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter — Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo"><span class="nav-logo-badge">MC</span><span>Marketers Club</span></a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+      <div class="nav-links">
+        <a href="/events.html">Events</a>
+        <a href="/hire-marketers.html">Hire Marketers</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/newsletter.html">Newsletter</a>
+        <a href="/sign-in.html" class="btn btn-sm">Member Login</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container section has-stickers">
+    <div class="float-stickers" aria-hidden="true">
+      <span class="float-sticker" style="--rot:-10deg;--dur:6.3s;--delay:-1.4s;top:4.5rem;right:10%">🔋</span>
+      <span class="float-sticker sm" style="--rot:12deg;--dur:5.7s;--delay:-3.3s;top:8.5rem;right:26%">❤️</span>
+    </div>
+    <div style="margin-bottom: 2rem;">
+      <span class="pill">✦ Editions</span>
+      <h1>Newsletter Feed</h1>
+      <div class="tag-bar" id="newsletter-tags" style="margin-top: 1.5rem;">
+        <a href="/newsletter.html" class="tag active" data-tag="">All</a>
+        <a href="/newsletter.html?tag=Growth%20Marketing" class="tag" data-tag="Growth Marketing">Growth Marketing</a>
+        <a href="/newsletter.html?tag=Content" class="tag" data-tag="Content">Content</a>
+        <a href="/newsletter.html?tag=Ad%20Copywriting" class="tag" data-tag="Ad Copywriting">Ad Copywriting</a>
+        <a href="/newsletter.html?tag=Marketing%20Analytics" class="tag" data-tag="Marketing Analytics">Marketing Analytics</a>
+        <a href="/newsletter.html?tag=AI%20Tools" class="tag" data-tag="AI Tools">AI Tools</a>
+        <a href="/newsletter.html?tag=SEO" class="tag" data-tag="SEO">SEO</a>
+      </div>
+    </div>
+    <div class="grid grid-2" style="margin-bottom: 3rem;">
+      <div class="card">
+        <h3 style="margin-bottom: .8rem;">Get the newsletter</h3>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Short editions with quick tips, delivered to your inbox.</p>
+        <form id="newsletter-signup" style="display: flex; gap: .6rem; flex-wrap: wrap;">
+          <input name="email" type="email" placeholder="you@example.com" required style="flex: 1; min-width: 220px; padding: .85rem 1rem; border-radius: var(--r-pill); border: 1px solid var(--line-strong); background: rgba(255,255,255,0.8);">
+          <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <p id="newsletter-status" style="margin-top: 1rem;"></p>
+      </div>
+    </div>
+    <div class="grid grid-2" id="newsletter-list"></div>
+  </main>
+  <script type="module" src="/assets/js/newsletter.bundle.js"></script>
+</body>
+</html>

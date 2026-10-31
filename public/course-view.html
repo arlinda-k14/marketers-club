@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course - Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-badge">MC</span>
+        <span><strong>Marketers Club</strong></span>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+      <div class="nav-links">
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/forum.html">Forum</a>
+        <a href="/mentors.html">Mentors</a>
+        <a href="/tools.html">Tools</a>
+        <a href="/profile.html">Profile</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container">
+    <h1 style="margin: 2rem 0;" id="courseTitle">Course</h1>
+    <div class="status-panel">
+      <h2 style="margin-bottom: 1rem;">Video masterclasses launch soon</h2>
+      <p style="color: var(--text-muted); margin-bottom: 2rem;">This course is under construction. Join the waitlist to be notified.</p>
+      <form id="waitlistForm" style="max-width: 400px; margin: 0 auto; display: flex; gap: 0.5rem;">
+        <input type="email" id="waitlistEmail" placeholder="Enter your email" required style="flex: 1; padding: 0.7rem; border: 1px solid var(--line); border-radius: var(--r);">
+        <button type="submit" class="btn">Join Waitlist</button>
+      </form>
+    </div>
+  </main>
+  <script type="module">
+    import { initFirebase } from '/assets/js/courses.bundle.js';
+    // inline simple handler
+    const params = new URLSearchParams(window.location.search);
+    const track = params.get('track') || 'course';
+    document.getElementById('courseTitle').textContent = track.charAt(0).toUpperCase() + track.slice(1);
+    document.getElementById('waitlistForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      alert('Added to waitlist!');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - Marketers Club</title>
+  <link rel="stylesheet" href="/styles/main.css">
+  <style>
+    @media print {
+      nav, .no-print { display: none !important; }
+      body { background: white; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-bar">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-badge">MC</span>
+        <span><strong>Marketers Club</strong></span>
+      </a>
+      <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">Menu</button>
+      <div class="nav-links">
+        <a href="/dashboard.html">Dashboard</a>
+        <a href="/courses.html">Courses</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/forum.html">Forum</a>
+        <a href="/mentors.html">Mentors</a>
+        <a href="/tools.html">Tools</a>
+        <a href="/profile.html" aria-current="page">Profile</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mp" id="mp-root" aria-busy="true">
+    <p id="mp-demo-note" class="mp-note no-print" hidden>Local demo profile. Changes save to <code>seed/mock-data.json</code>.</p>
+
+    <section class="card mp-hero no-print" aria-labelledby="mp-name">
+      <div class="mp-avatar-col">
+        <div class="mp-avatar-ring">
+          <img id="mp-avatar-img" class="mp-avatar" alt="" hidden>
+          <span id="mp-avatar-initials" class="mp-initials" aria-hidden="true"></span>
+        </div>
+        <input type="file" id="mp-avatar-input" class="visually-hidden" accept="image/jpeg,image/png,image/webp">
+        <label for="mp-avatar-input" class="btn ghost btn-sm mp-upload">Change photo</label>
+        <p id="mp-avatar-status" class="mp-hint" aria-live="polite"></p>
+      </div>
+
+      <div class="mp-hero-main">
+        <h1 id="mp-name">Profile</h1>
+        <p id="mp-role" class="role-line"></p>
+        <p id="mp-bio" class="mp-bio"></p>
+        <ul id="mp-skills" class="mp-pills" aria-label="Core skills"></ul>
+        <ul id="mp-links" class="mp-links" aria-label="Links"></ul>
+        <div class="mp-hero-actions">
+          <button type="button" id="mp-edit-toggle" class="btn btn-ink" aria-expanded="false" aria-controls="mp-edit">Edit profile</button>
+        </div>
+      </div>
+
+      <dl class="mp-stats">
+        <div><dt>Articles</dt><dd id="mp-stat-articles">0</dd></div>
+        <div><dt>Workshops</dt><dd id="mp-stat-events">0</dd></div>
+        <div><dt>Forum posts</dt><dd id="mp-stat-posts">0</dd></div>
+      </dl>
+    </section>
+
+    <section id="mp-edit" class="card mp-edit no-print" aria-labelledby="mp-edit-title" hidden>
+      <h2 id="mp-edit-title">Edit profile</h2>
+      <form id="mp-form" novalidate>
+        <div class="mp-form-grid">
+          <fieldset class="mp-fieldset">
+            <legend>Personal information</legend>
+            <div class="form-group">
+              <label for="f-fullName">Full name</label>
+              <input id="f-fullName" name="fullName" type="text" maxlength="80" autocomplete="name" required aria-describedby="err-fullName">
+              <p class="mp-error" id="err-fullName"></p>
+            </div>
+            <div class="form-group">
+              <label for="f-currentRole">Professional title or role</label>
+              <input id="f-currentRole" name="currentRole" type="text" maxlength="120" placeholder="Founder &amp; Creative Strategist" autocomplete="organization-title">
+            </div>
+            <div class="form-group">
+              <label for="f-bio">Bio or executive summary</label>
+              <textarea id="f-bio" name="bio" maxlength="1200" rows="7" aria-describedby="f-bio-count"></textarea>
+              <p class="mp-hint" id="f-bio-count"></p>
+            </div>
+          </fieldset>
+
+          <fieldset class="mp-fieldset">
+            <legend>Core skills</legend>
+            <div class="mp-taginput" id="mp-taginput">
+              <ul id="mp-skill-list" class="mp-pills mp-pills-edit" aria-label="Skills added"></ul>
+              <label for="f-skill" class="visually-hidden">Add a skill</label>
+              <input id="f-skill" type="text" maxlength="40" placeholder="Add a skill" aria-describedby="f-skill-hint">
+            </div>
+            <p class="mp-hint" id="f-skill-hint">Press Enter or a comma to add. Up to 20 skills.</p>
+          </fieldset>
+
+          <fieldset class="mp-fieldset mp-span">
+            <legend>Qualifications &amp; credentials</legend>
+            <p class="mp-hint">Degrees, certifications and leadership roles.</p>
+            <ul id="mp-quals" class="mp-quals"></ul>
+            <button type="button" id="mp-add-qual" class="btn ghost btn-sm">Add qualification</button>
+          </fieldset>
+
+          <fieldset class="mp-fieldset mp-span">
+            <legend>Portfolio &amp; social links</legend>
+            <div class="mp-links-grid">
+              <div class="form-group">
+                <label for="f-website">Website or portfolio</label>
+                <input id="f-website" name="links.website" type="url" inputmode="url" placeholder="https://" aria-describedby="err-links.website">
+                <p class="mp-error" id="err-links.website"></p>
+              </div>
+              <div class="form-group">
+                <label for="f-github">GitHub</label>
+                <input id="f-github" name="links.github" type="url" inputmode="url" placeholder="https://github.com/" aria-describedby="err-links.github">
+                <p class="mp-error" id="err-links.github"></p>
+              </div>
+              <div class="form-group">
+                <label for="f-linkedin">LinkedIn</label>
+                <input id="f-linkedin" name="links.linkedin" type="url" inputmode="url" placeholder="https://www.linkedin.com/in/" aria-describedby="err-links.linkedin">
+                <p class="mp-error" id="err-links.linkedin"></p>
+              </div>
+              <div class="form-group">
+                <label for="f-newsletter">Substack or newsletter</label>
+                <input id="f-newsletter" name="links.newsletter" type="url" inputmode="url" placeholder="https://" aria-describedby="err-links.newsletter">
+                <p class="mp-error" id="err-links.newsletter"></p>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="mp-form-actions">
+          <button type="submit" id="mp-save" class="btn btn-ink">Save changes</button>
+          <button type="button" id="mp-cancel" class="btn ghost">Discard changes</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="listing" class="card mp-listing no-print" aria-labelledby="mp-listing-title">
+      <div class="mp-listing-head">
+        <div>
+          <h2 id="mp-listing-title">Hire Marketers listing</h2>
+          <p class="meta-muted" id="mp-listing-intro">List yourself in the Hire Marketers directory so companies can find and contact you.</p>
+        </div>
+        <span class="mp-listing-status" id="mp-listing-status" data-status="none">Not listed</span>
+      </div>
+      <p class="mp-hint" id="mp-listing-note">Your name, photo, bio and links come from your profile above. New listings are reviewed by an admin before they appear.</p>
+
+      <form id="mp-listing-form" novalidate>
+        <div class="mp-listing-grid">
+          <div class="form-group mp-span">
+            <label for="l-role">Title clients will see</label>
+            <input id="l-role" name="role" type="text" maxlength="120" placeholder="Growth &amp; Marketing Consultant" aria-describedby="err-role">
+            <p class="mp-error" id="err-role"></p>
+          </div>
+          <fieldset class="mp-fieldset mp-span" aria-describedby="err-specialties">
+            <legend class="mp-legend-sm">Specialties (up to 6)</legend>
+            <div class="mp-checks" id="l-specialties"></div>
+            <p class="mp-error" id="err-specialties"></p>
+          </fieldset>
+          <div class="form-group">
+            <label for="l-years">Years of experience <span class="mp-optional">(optional)</span></label>
+            <input id="l-years" name="yearsExperience" type="number" min="0" max="60" inputmode="numeric" aria-describedby="err-yearsExperience">
+            <p class="mp-error" id="err-yearsExperience"></p>
+          </div>
+          <div class="form-group">
+            <label for="l-email">Contact email for inquiries</label>
+            <input id="l-email" name="email" type="email" maxlength="200" autocomplete="email" aria-describedby="l-email-hint err-email">
+            <p class="mp-hint" id="l-email-hint">Shown only to signed-in members.</p>
+            <p class="mp-error" id="err-email"></p>
+          </div>
+          <fieldset class="mp-fieldset mp-span">
+            <legend class="mp-legend-sm">Rate in USD <span class="mp-optional">(optional, leave empty for "Rate on request")</span></legend>
+            <div class="mp-rate-row">
+              <div class="form-group">
+                <label for="l-rateMin">From</label>
+                <input id="l-rateMin" name="rateMin" type="number" min="0" inputmode="numeric" aria-describedby="err-rateMin">
+                <p class="mp-error" id="err-rateMin"></p>
+              </div>
+              <div class="form-group">
+                <label for="l-rateMax">To</label>
+                <input id="l-rateMax" name="rateMax" type="number" min="0" inputmode="numeric" aria-describedby="err-rateMax">
+                <p class="mp-error" id="err-rateMax"></p>
+              </div>
+              <div class="form-group">
+                <label for="l-rateType">Per</label>
+                <select id="l-rateType" name="rateType">
+                  <option value="hourly">Hour</option>
+                  <option value="monthly">Month</option>
+                  <option value="project">Project</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="mp-form-actions">
+          <button type="submit" id="mp-listing-save" class="btn btn-ink">Submit for review</button>
+          <a id="mp-listing-view" class="btn ghost" href="#" hidden>View in directory</a>
+          <button type="button" id="mp-listing-remove" class="btn ghost" hidden>Remove listing</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="mp-hub no-print" aria-labelledby="mp-hub-title">
+      <h2 id="mp-hub-title" class="mp-section-title">Your work on Marketers Club</h2>
+      <div class="mp-tabs" role="tablist" aria-label="Your content">
+        <button type="button" role="tab" id="tab-articles" aria-controls="panel-articles" aria-selected="true">Articles &amp; Musings <span class="mp-count" id="count-articles">0</span></button>
+        <button type="button" role="tab" id="tab-events" aria-controls="panel-events" aria-selected="false" tabindex="-1">Workshops &amp; Events <span class="mp-count" id="count-events">0</span></button>
+        <button type="button" role="tab" id="tab-community" aria-controls="panel-community" aria-selected="false" tabindex="-1">Community &amp; Forum <span class="mp-count" id="count-community">0</span></button>
+      </div>
+
+      <div class="mp-panel" role="tabpanel" id="panel-articles" aria-labelledby="tab-articles" tabindex="0">
+        <div class="mp-panel-head">
+          <p class="meta-muted" id="articles-summary"></p>
+          <a href="/admin-panel.html" class="btn btn-ink btn-sm">New article</a>
+        </div>
+        <div id="articles-list" class="mp-article-list"></div>
+      </div>
+
+      <div class="mp-panel" role="tabpanel" id="panel-events" aria-labelledby="tab-events" tabindex="0" hidden>
+        <div class="mp-panel-head">
+          <p class="meta-muted" id="events-summary"></p>
+          <a href="/submit-event.html" class="btn btn-ink btn-sm">Host an event</a>
+        </div>
+        <div id="events-list"></div>
+      </div>
+
+      <div class="mp-panel" role="tabpanel" id="panel-community" aria-labelledby="tab-community" tabindex="0" hidden>
+        <div class="mp-panel-head">
+          <p class="meta-muted" id="community-summary"></p>
+          <a href="/forum.html" class="btn btn-ink btn-sm">Start a discussion</a>
+        </div>
+        <div class="mp-community">
+          <div>
+            <h3 class="mp-subhead">Discussions started</h3>
+            <ul id="discussions-list" class="mp-feed"></ul>
+          </div>
+          <div>
+            <h3 class="mp-subhead">Replies</h3>
+            <ul id="replies-list" class="mp-feed"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mp-certs" class="mp-certs" aria-labelledby="mp-certs-title" hidden>
+      <h2 id="mp-certs-title" class="mp-section-title">Achievements: certificates</h2>
+      <div id="certificates" class="grid grid-3"></div>
+      <button type="button" class="btn ghost no-print" style="margin-top: 1rem;" onclick="window.print()">Print certificates</button>
+    </section>
+  </main>
+
+  <div id="mp-toast" class="mp-toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/assets/js/profile.bundle.js"></script>
+</body>
+</html>

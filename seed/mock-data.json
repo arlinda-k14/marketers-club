@@ -1,0 +1,831 @@
+{
+  "_note": "MOCK DATA — fictional people and content. example.com links only. Not for production.",
+  "marketers": [
+    {
+      "id": "m1",
+      "fullName": "Elise Moreau",
+      "role": "Brand Director",
+      "avatar": "/assets/images/marketers/elise-moreau.jpg",
+      "bio": "Brand director building editorial systems for founder-led studios. I turn scattered ideas into a visual language people recognise in a single scroll.",
+      "yearsExperience": 9,
+      "rateMin": 120,
+      "rateMax": 180,
+      "rateType": "hourly",
+      "specialties": [
+        "brand strategy",
+        "creative direction",
+        "content"
+      ],
+      "portfolioLinks": [
+        "https://example.com/elise-portfolio",
+        "https://example.com/elise-case-studies"
+      ],
+      "website": "https://example.com/elise",
+      "linkedin": "https://example.com/elise-linkedin",
+      "email": "elise@inbox.example.com",
+      "verified": true,
+      "completionScore": 100,
+      "lastActivityAt": "2026-10-24T10:20:00.000Z"
+    },
+    {
+      "id": "m2",
+      "fullName": "Theo Vance",
+      "role": "Growth & Paid Ads Lead",
+      "avatar": "/assets/images/marketers/theo-vance.jpg",
+      "bio": "Paid acquisition for considered brands. I build testing rhythms that compound instead of burning budget on one-off spikes.",
+      "yearsExperience": 7,
+      "rateMin": 95,
+      "rateMax": 140,
+      "rateType": "hourly",
+      "specialties": [
+        "performance marketing",
+        "growth marketing",
+        "AI tools"
+      ],
+      "portfolioLinks": [
+        "https://example.com/theo-portfolio"
+      ],
+      "website": "https://example.com/theo",
+      "linkedin": "https://example.com/theo-linkedin",
+      "email": "theo@inbox.example.com",
+      "verified": true,
+      "completionScore": 100,
+      "lastActivityAt": "2026-10-23T16:05:00.000Z"
+    },
+    {
+      "id": "m3",
+      "fullName": "Noor Haddad",
+      "role": "Creative Content Strategist",
+      "avatar": "/assets/images/marketers/noor-haddad.jpg",
+      "bio": "I write and direct short-form content that sounds like a person, not a brand account. Editorial calendars, hooks, and quiet storytelling.",
+      "yearsExperience": 8,
+      "rateMin": 90,
+      "rateMax": 130,
+      "rateType": "hourly",
+      "specialties": [
+        "content",
+        "creator strategy",
+        "ad copywriting"
+      ],
+      "portfolioLinks": [
+        "https://example.com/noor-portfolio"
+      ],
+      "website": "https://example.com/noor",
+      "linkedin": "https://example.com/noor-linkedin",
+      "email": "noor@inbox.example.com",
+      "verified": true,
+      "completionScore": 100,
+      "lastActivityAt": "2026-10-22T09:40:00.000Z"
+    },
+    {
+      "id": "m4",
+      "fullName": "Marcus Feld",
+      "role": "Marketing Analytics Lead",
+      "avatar": "/assets/images/marketers/marcus-feld.jpg",
+      "bio": "Analytics without the dashboard theatre. I help teams measure fewer things, more honestly, and decide faster.",
+      "yearsExperience": 6,
+      "rateMin": 100,
+      "rateMax": 150,
+      "rateType": "hourly",
+      "specialties": [
+        "marketing analytics",
+        "performance marketing"
+      ],
+      "portfolioLinks": [
+        "https://example.com/marcus-portfolio"
+      ],
+      "website": "https://example.com/marcus",
+      "linkedin": "https://example.com/marcus-linkedin",
+      "email": "marcus@inbox.example.com",
+      "verified": true,
+      "completionScore": 100,
+      "lastActivityAt": "2026-10-21T14:15:00.000Z"
+    },
+    {
+      "id": "m5",
+      "fullName": "Sana Iqbal",
+      "role": "Founder Brand Consultant",
+      "avatar": "/assets/images/marketers/sana-iqbal.jpg",
+      "bio": "I help founders become the most credible voice in their category. Positioning, launch writing, and the first 90 days of content.",
+      "yearsExperience": 5,
+      "rateMin": 80,
+      "rateMax": 120,
+      "rateType": "hourly",
+      "specialties": [
+        "brand strategy",
+        "ad copywriting",
+        "content"
+      ],
+      "portfolioLinks": [
+        "https://example.com/sana-portfolio"
+      ],
+      "website": "",
+      "linkedin": "https://example.com/sana-linkedin",
+      "email": "sana@inbox.example.com",
+      "verified": false,
+      "completionScore": 100,
+      "lastActivityAt": "2026-10-19T11:30:00.000Z"
+    },
+    {
+      "id": "m6",
+      "fullName": "Jonah Reyes",
+      "role": "SEO & Editorial Lead",
+      "avatar": "/assets/images/marketers/jonah-reyes.jpg",
+      "bio": "Editorial SEO for teams that refuse to publish filler. Topic architecture, briefs, and long-form pieces that earn their place.",
+      "yearsExperience": 6,
+      "rateMin": 85,
+      "rateMax": 125,
+      "rateType": "hourly",
+      "specialties": [
+        "SEO",
+        "content",
+        "marketing analytics"
+      ],
+      "portfolioLinks": [
+        "https://example.com/jonah-portfolio"
+      ],
+      "website": "https://example.com/jonah",
+      "linkedin": "",
+      "email": "jonah@inbox.example.com",
+      "verified": true,
+      "completionScore": 100,
+      "lastActivityAt": "2026-10-18T08:55:00.000Z"
+    },
+    {
+      "id": "arlinda-kaloshi",
+      "memberUid": "arlinda-kaloshi",
+      "source": "member",
+      "status": "approved",
+      "fullName": "Arlinda Kaloshi",
+      "role": "Head of Growth & Marketing, Creative Hub Kosovo",
+      "avatar": "/assets/images/members/arlinda-kaloshi-1793101240687.jpg",
+      "bio": "I build marketing systems that keep working after I log off: the content pipeline, the routing and the playbook, so growth stops depending on whoever happens to be in the room. I lead growth and marketing at Creative Hub Kosovo, mentor learners in the Digital Marketing Academy, and co-founded AdGate in 2025. I write and work in Albanian, English, and Norwegian.",
+      "yearsExperience": null,
+      "rateMin": null,
+      "rateMax": null,
+      "rateType": "hourly",
+      "specialties": [
+        "brand strategy",
+        "content",
+        "performance marketing",
+        "AI tools"
+      ],
+      "portfolioLinks": [
+        "https://hubsy.netlify.app/",
+        "https://github.com/arlinda-k14"
+      ],
+      "website": "https://hubsy.netlify.app/",
+      "linkedin": "https://www.linkedin.com/in/arlinda-kaloshi/",
+      "email": "arlinda@creativehubkos.com",
+      "verified": true,
+      "lastActivityAt": "2026-10-27T11:43:23.226Z",
+      "createdAt": "2026-10-27T09:00:00.000Z"
+    }
+  ],
+  "articles": [
+    {
+      "id": "a1",
+      "title": "The 1-Hour Daily Content Framework",
+      "excerpt": "A repeatable hour that produces one idea, three formats, and zero burnout — built for founders who still have a company to run.",
+      "authorId": "m3",
+      "author": "Noor Haddad",
+      "authorAvatar": "/assets/images/marketers/noor-haddad.jpg",
+      "readTime": "7 min read",
+      "category": "Creator Strategy",
+      "tags": [
+        "Growth Marketing",
+        "AI Tools"
+      ],
+      "coverImage": "/assets/images/articles/daily-content-framework.jpg",
+      "content": "Most content advice assumes you have a team. This framework assumes you have an hour.\n\nThe hour is split into four quarters: collect, choose, draft, shape. Collect is passive — screenshots, voice notes, half-formed observations. Choose is the only decision that matters: one idea, not five. Draft is deliberately ugly. Shape is where voice enters.\n\nThe output is rarely a single post. One idea becomes a short video, a caption, and a line in the newsletter. The point is not volume. The point is that the machinery runs tomorrow without negotiation.",
+      "status": "published",
+      "publishedAt": "2026-10-22T09:00:00.000Z"
+    },
+    {
+      "id": "a2",
+      "title": "Designing Aesthetic High-Converting Moodboards",
+      "excerpt": "Moodboards are strategy documents disguised as taste. Here is how to build one that aligns a team and moves a metric.",
+      "authorId": "m1",
+      "author": "Elise Moreau",
+      "authorAvatar": "/assets/images/marketers/elise-moreau.jpg",
+      "readTime": "9 min read",
+      "category": "Creative Direction",
+      "tags": [
+        "Ad Copywriting",
+        "Growth Marketing"
+      ],
+      "coverImage": "/assets/images/articles/laptop-moodboard.jpg",
+      "content": "A moodboard without a decision behind it is wallpaper.\n\nStart with the conversion moment, not the palette. What must a person understand in the first two seconds? Work backwards into type, crop, and colour. Every reference should answer a question the team is actually arguing about.\n\nThree columns help: what we are, what we are not, and what we are becoming. The middle column does the most work. It prevents the drift that makes every brand look like the same beige studio.",
+      "status": "published",
+      "publishedAt": "2026-10-16T09:00:00.000Z"
+    },
+    {
+      "id": "a3",
+      "title": "Organic Growth Shifts for 2026",
+      "excerpt": "Reach is no longer a number. Five quiet shifts that reward brands willing to be specific, useful, and a little slower.",
+      "authorId": "m2",
+      "author": "Theo Vance",
+      "authorAvatar": "/assets/images/marketers/theo-vance.jpg",
+      "readTime": "6 min read",
+      "category": "Growth Marketing",
+      "tags": [
+        "Growth Marketing",
+        "Marketing Analytics"
+      ],
+      "coverImage": "/assets/images/articles/hack-their-psychology.jpg",
+      "content": "The feeds got noisier and the audience got better at ignoring us. That is not a crisis; it is a filter.\n\nThe brands compounding right now are doing unglamorous things: publishing for named segments, answering real questions in comments, and building small owned spaces where the algorithm cannot intervene. The measurement changed too. Saves, replies, and returning viewers say more than impressions ever did.\n\nSlower is not passive. It is deliberate.",
+      "status": "published",
+      "publishedAt": "2026-10-09T09:00:00.000Z"
+    },
+    {
+      "id": "a4",
+      "title": "Founders Who Write: A Quiet Advantage",
+      "excerpt": "The founder who can explain their thinking in 400 words will out-recruit, out-sell, and outlast the one who cannot.",
+      "authorId": "m5",
+      "author": "Sana Iqbal",
+      "authorAvatar": "/assets/images/marketers/sana-iqbal.jpg",
+      "readTime": "8 min read",
+      "category": "Founder Lifestyle",
+      "tags": [
+        "Content",
+        "Ad Copywriting"
+      ],
+      "coverImage": "/assets/images/articles/founders-who-write.jpg",
+      "content": "Writing is the cheapest form of clarity available to a founder.\n\nIt forces the vague strategy into sentences. It exposes the parts you have been avoiding. And it compounds: a memo becomes a post, a post becomes a talk, a talk becomes the thing people quote back to you in a sales call.\n\nThe advantage is not literary. It is that you become legible — to candidates, customers, and eventually to yourself.",
+      "status": "published",
+      "publishedAt": "2026-10-02T09:00:00.000Z"
+    },
+    {
+      "id": "a5",
+      "title": "The Analytics Reset: Measure Less, Learn More",
+      "excerpt": "A smaller scorecard, reviewed weekly, beats a dashboard nobody opens. How to rebuild measurement around decisions.",
+      "authorId": "m4",
+      "author": "Marcus Feld",
+      "authorAvatar": "/assets/images/marketers/marcus-feld.jpg",
+      "readTime": "11 min read",
+      "category": "Marketing Analytics",
+      "tags": [
+        "Marketing Analytics",
+        "AI Tools"
+      ],
+      "coverImage": "/assets/images/articles/analytics-reset.jpg",
+      "content": "If a metric never changes a decision, it is decoration.\n\nThe reset begins by listing the decisions you actually make each week, then working backwards to the smallest set of numbers that inform them. Most teams land on five to seven. Everything else becomes an archive.\n\nThe second move is cadence. A weekly review with the same people, the same questions, and a written note beats a live dashboard every time.",
+      "status": "published",
+      "publishedAt": "2026-09-25T09:00:00.000Z"
+    },
+    {
+      "id": "a6",
+      "title": "Marketing Systems That Keep Working After You Log Off",
+      "excerpt": "Most campaigns stop the week they end. This is the pipeline, routing and playbook I set up so growth keeps moving when nobody is watching it.",
+      "authorId": "arlinda-kaloshi",
+      "author": "Arlinda Kaloshi",
+      "authorAvatar": "",
+      "readTime": "6 min read",
+      "category": "Growth Marketing",
+      "tags": [
+        "Growth Marketing",
+        "Content"
+      ],
+      "coverImage": "/assets/images/articles/systems-after-log-off.jpg",
+      "content": "A campaign is a burst. A system is what is still running a month later.\n\nI start with three pieces: a content pipeline that turns one source into scheduled drafts, a router that sends each request to the right specialist, and a playbook that says who approves what before it ships.\n\nNone of it is complicated. The work is deciding the rules once, writing them down, and letting the team stop re-deciding them every Monday.",
+      "status": "published",
+      "publishedAt": "2026-09-12T09:00:00.000Z"
+    },
+    {
+      "id": "a7",
+      "title": "One Idea, a Month of Posts, Two Languages",
+      "excerpt": "How I turn one strong source into a month of English and Albanian posts without rewriting everything from scratch every Friday.",
+      "authorId": "arlinda-kaloshi",
+      "author": "Arlinda Kaloshi",
+      "authorAvatar": "",
+      "readTime": "7 min read",
+      "category": "Content",
+      "tags": [
+        "Content",
+        "AI Tools"
+      ],
+      "coverImage": "/assets/images/articles/one-idea-two-languages.jpg",
+      "content": "Translating a finished post rarely works. The argument bends and the hook loses its edge.\n\nI draft both languages from the same source instead. Each version gets its own hook, its own examples and its own call to action, and they never share a caption.\n\nA reviewer who reads that language natively approves every post before it is scheduled. That one step catches most of what an agent gets wrong.",
+      "status": "published",
+      "publishedAt": "2026-08-28T09:00:00.000Z"
+    },
+    {
+      "id": "a8",
+      "title": "Agree the Stop Rule Before You Spend",
+      "excerpt": "Paid social goes wrong when nobody decided in advance what failure looks like. A one-line stop rule settles most of those arguments early.",
+      "authorId": "arlinda-kaloshi",
+      "author": "Arlinda Kaloshi",
+      "authorAvatar": "",
+      "readTime": "5 min read",
+      "category": "Marketing Analytics",
+      "tags": [
+        "Marketing Analytics",
+        "Growth Marketing"
+      ],
+      "coverImage": "/assets/images/articles/stop-rule.jpg",
+      "content": "Before a campaign launches, I ask the team to write one sentence: at what point do we pause this?\n\nIt names the metric, the threshold and the date we check it. If the campaign misses, we stop and rewrite the hook before adding budget.\n\nThe rule takes ten minutes to agree and saves the meeting where everyone defends a spend nobody wants to admit is not working.",
+      "status": "published",
+      "publishedAt": "2026-08-14T09:00:00.000Z"
+    }
+  ],
+  "events": [
+    {
+      "id": "e1",
+      "title": "Aesthetic Content Architecture",
+      "speakerId": "m1",
+      "hostName": "Elise Moreau",
+      "speaker": "Elise Moreau",
+      "speakerAvatar": "/assets/images/marketers/elise-moreau.jpg",
+      "date": "2026-11-12",
+      "time": "14:00",
+      "timezone": "AEDT",
+      "city": "SYDNEY",
+      "eventType": "LIVE WORKSHOP",
+      "meetingLink": "https://example.com/meeting/aesthetic-content",
+      "venueLocation": "",
+      "description": "A working session on building a content system that looks intentional at every touchpoint — from feed to landing page to invoice.",
+      "agenda": [
+        "The three-column brand filter",
+        "Crop, type, and colour rules that scale",
+        "Live teardown of attendee moodboards"
+      ],
+      "categoryTags": [
+        "Content",
+        "Growth Marketing"
+      ],
+      "capacity": 60,
+      "posterImage": "/assets/images/events/aesthetic-content-architecture.jpg",
+      "status": "approved",
+      "submittedBy": "seed",
+      "createdAt": "2026-10-01T09:00:00.000Z"
+    },
+    {
+      "id": "e2",
+      "title": "Reels & Creative Direction Masterclass",
+      "speakerId": "m2",
+      "hostName": "Theo Vance",
+      "speaker": "Theo Vance",
+      "speakerAvatar": "/assets/images/marketers/theo-vance.jpg",
+      "date": "2026-11-26",
+      "time": "18:00",
+      "timezone": "GMT",
+      "city": "LONDON",
+      "eventType": "MASTERCLASS",
+      "meetingLink": "https://example.com/meeting/reels-direction",
+      "venueLocation": "",
+      "description": "How to direct short-form video with a point of view: shot lists, hooks, pacing, and the edit decisions that keep people watching.",
+      "agenda": [
+        "Hook frameworks that survive the first second",
+        "Shot lists for solo creators",
+        "Editing for retention, not vanity"
+      ],
+      "categoryTags": [
+        "AI Tools",
+        "Ad Copywriting"
+      ],
+      "capacity": 45,
+      "posterImage": "/assets/images/events/reels-creative-direction.jpg",
+      "status": "approved",
+      "submittedBy": "seed",
+      "createdAt": "2026-10-02T09:00:00.000Z"
+    },
+    {
+      "id": "e3",
+      "title": "Q4 Launch Strategy Breakdown",
+      "speakerId": "m3",
+      "hostName": "Noor Haddad",
+      "speaker": "Noor Haddad",
+      "speakerAvatar": "/assets/images/marketers/noor-haddad.jpg",
+      "date": "2026-12-03",
+      "time": "16:00",
+      "timezone": "EST",
+      "city": "NEW YORK",
+      "eventType": "LIVE WORKSHOP",
+      "meetingLink": "https://example.com/meeting/q4-launch",
+      "venueLocation": "",
+      "description": "A full walkthrough of a Q4 launch: sequencing, asset list, channel roles, and the two weeks most teams underestimate.",
+      "agenda": [
+        "Launch sequence map",
+        "Asset checklist and owners",
+        "The post-launch retention window"
+      ],
+      "categoryTags": [
+        "Growth Marketing",
+        "Marketing Analytics"
+      ],
+      "capacity": 80,
+      "posterImage": "/assets/images/events/q4-launch-strategy.jpg",
+      "status": "approved",
+      "submittedBy": "seed",
+      "createdAt": "2026-10-03T09:00:00.000Z"
+    },
+    {
+      "id": "e4",
+      "title": "Building a Personal Brand That Converts",
+      "speakerId": "m5",
+      "hostName": "Sana Iqbal",
+      "speaker": "Sana Iqbal",
+      "speakerAvatar": "/assets/images/marketers/sana-iqbal.jpg",
+      "date": "2026-09-18",
+      "time": "13:00",
+      "timezone": "GMT",
+      "city": "LONDON",
+      "eventType": "PAST SESSION",
+      "meetingLink": "",
+      "venueLocation": "Example Hall, London",
+      "description": "The bridge between being visible and being hired — positioning, proof, and the content that earns trust before the first call.",
+      "agenda": [
+        "Positioning in one sentence",
+        "Proof without bragging",
+        "A 30-day visibility rhythm"
+      ],
+      "categoryTags": [
+        "Content",
+        "Growth Marketing"
+      ],
+      "capacity": 40,
+      "posterImage": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
+      "recordingUrl": "https://example.com/recordings/personal-brand",
+      "slidesUrl": "https://example.com/slides/personal-brand",
+      "status": "approved",
+      "submittedBy": "seed",
+      "createdAt": "2026-08-20T09:00:00.000Z"
+    },
+    {
+      "id": "e5",
+      "title": "Editorial Planning for Founders",
+      "speakerId": "m6",
+      "hostName": "Jonah Reyes",
+      "speaker": "Jonah Reyes",
+      "speakerAvatar": "/assets/images/marketers/jonah-reyes.jpg",
+      "date": "2026-08-27",
+      "time": "15:00",
+      "timezone": "BST",
+      "city": "MANCHESTER",
+      "eventType": "PAST SESSION",
+      "meetingLink": "",
+      "venueLocation": "Example Studio, Manchester",
+      "description": "A calm, repeatable editorial calendar for founders who publish their own thinking — topics, briefs, and a realistic cadence.",
+      "agenda": [
+        "Topic clusters that fit your calendar",
+        "Briefs that write themselves",
+        "The quarterly reset"
+      ],
+      "categoryTags": [
+        "SEO",
+        "Content"
+      ],
+      "capacity": 30,
+      "posterImage": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80",
+      "recordingUrl": "",
+      "slidesUrl": "https://example.com/slides/editorial-planning",
+      "status": "approved",
+      "submittedBy": "seed",
+      "createdAt": "2026-07-30T09:00:00.000Z"
+    },
+    {
+      "id": "e6",
+      "title": "Content Systems in Two Languages",
+      "speakerId": "arlinda-kaloshi",
+      "hostName": "Arlinda Kaloshi",
+      "speaker": "Arlinda Kaloshi",
+      "speakerAvatar": "",
+      "date": "2027-01-21",
+      "time": "18:00",
+      "timezone": "CET",
+      "city": "PRISHTINA",
+      "eventType": "LIVE WORKSHOP",
+      "meetingLink": "",
+      "venueLocation": "Prishtina (venue shared after registration)",
+      "description": "A hands-on session on turning one source into a month of English and Albanian posts, with the templates and review steps that keep quality up.",
+      "agenda": [
+        "Pick one source worth a month of posts",
+        "Draft once, then adapt per language and channel",
+        "Set a review step before anything is scheduled"
+      ],
+      "categoryTags": [
+        "Content",
+        "AI Tools"
+      ],
+      "capacity": 40,
+      "posterImage": "/assets/images/events/content-systems-two-languages.jpg",
+      "status": "approved",
+      "submittedBy": "arlinda-kaloshi",
+      "createdAt": "2026-09-30T09:00:00.000Z"
+    },
+    {
+      "id": "e7",
+      "title": "AMA: Building an AI Operating System for Marketing",
+      "speakerId": "arlinda-kaloshi",
+      "hostName": "Arlinda Kaloshi",
+      "speaker": "Arlinda Kaloshi",
+      "speakerAvatar": "",
+      "date": "2026-10-08",
+      "time": "17:00",
+      "timezone": "CET",
+      "city": "ONLINE",
+      "eventType": "AMA",
+      "meetingLink": "https://example.com/ama-ai-os",
+      "venueLocation": "",
+      "description": "Open questions on how a skill registry routes marketing requests to specialist agents, and where people approve the work before it ships.",
+      "agenda": [
+        "How the router decides which skill runs",
+        "Where a person approves before anything ships",
+        "What we would build differently next time"
+      ],
+      "categoryTags": [
+        "AI Tools",
+        "Growth Marketing"
+      ],
+      "capacity": 100,
+      "posterImage": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80",
+      "status": "approved",
+      "submittedBy": "arlinda-kaloshi",
+      "createdAt": "2026-09-30T09:00:00.000Z"
+    }
+  ],
+  "newsletterIssues": [
+    {
+      "id": "n14",
+      "issueNumber": 14,
+      "title": "Simple Shifts in Creator Storytelling",
+      "authorId": "m3",
+      "author": "Noor Haddad",
+      "authorAvatar": "/assets/images/marketers/noor-haddad.jpg",
+      "preview": "Three small narrative shifts that make short-form content feel less like advertising and more like a person thinking out loud.",
+      "tips": [
+        "Lead with the tension, not the context",
+        "Write the caption before the visual",
+        "End with a question you actually want answered"
+      ],
+      "tags": [
+        "Content",
+        "Growth Marketing"
+      ],
+      "coverImage": "/assets/images/newsletter/simple-shifts-creator-storytelling.jpg",
+      "sentAt": "2026-10-18T08:00:00.000Z",
+      "publishedAt": "2026-10-18T08:00:00.000Z"
+    },
+    {
+      "id": "n13",
+      "issueNumber": 13,
+      "title": "The Moodboard Method",
+      "authorId": "m1",
+      "author": "Elise Moreau",
+      "authorAvatar": "/assets/images/marketers/elise-moreau.jpg",
+      "preview": "How to turn a folder of references into a decision your whole team can defend — without a single all-hands meeting.",
+      "tips": [
+        "Start from the conversion moment",
+        "Use the what-we-are-not column",
+        "Cut every reference that needs explaining"
+      ],
+      "tags": [
+        "Ad Copywriting",
+        "AI Tools"
+      ],
+      "coverImage": "/assets/images/newsletter/moodboard-method.jpg",
+      "sentAt": "2026-10-04T08:00:00.000Z",
+      "publishedAt": "2026-10-04T08:00:00.000Z"
+    },
+    {
+      "id": "n12",
+      "issueNumber": 12,
+      "title": "Organic Growth, Quietly",
+      "authorId": "m2",
+      "author": "Theo Vance",
+      "authorAvatar": "/assets/images/marketers/theo-vance.jpg",
+      "preview": "The unglamorous work behind compounding reach: named audiences, real replies, and a small owned space online.",
+      "tips": [
+        "Publish for a named segment",
+        "Reply like a human, not a brand",
+        "Track returning viewers weekly"
+      ],
+      "tags": [
+        "Growth Marketing",
+        "Marketing Analytics",
+        "SEO"
+      ],
+      "coverImage": "/assets/images/newsletter/organic-growth-quietly.jpg",
+      "sentAt": "2026-09-20T08:00:00.000Z",
+      "publishedAt": "2026-09-20T08:00:00.000Z"
+    },
+    {
+      "id": "n11",
+      "issueNumber": 11,
+      "title": "What Founders Get Wrong About Content",
+      "authorId": "m5",
+      "author": "Sana Iqbal",
+      "authorAvatar": "/assets/images/marketers/sana-iqbal.jpg",
+      "preview": "It is rarely a distribution problem. Four assumptions that keep founder-led content stuck at the starting line.",
+      "tips": [
+        "Write to think, not to post",
+        "One idea per piece, always",
+        "Repurpose after proof, not before"
+      ],
+      "tags": [
+        "Content",
+        "Marketing Analytics"
+      ],
+      "coverImage": "/assets/images/newsletter/what-founders-get-wrong.jpg",
+      "sentAt": "2026-09-06T08:00:00.000Z",
+      "publishedAt": "2026-09-06T08:00:00.000Z"
+    }
+  ],
+  "discussions": [
+    {
+      "id": "d1",
+      "authorId": "m1",
+      "author": "Elise Moreau",
+      "authorAvatar": "/assets/images/marketers/elise-moreau.jpg",
+      "title": "How do you stop a moodboard turning into wallpaper?",
+      "content": "I keep seeing teams pin 200 references and decide nothing. What is your rule for cutting a board down to the references that actually settle an argument?",
+      "tags": [
+        "Content",
+        "Creative Direction"
+      ],
+      "commentCount": 4,
+      "createdAt": "2026-10-24T11:00:00.000Z"
+    },
+    {
+      "id": "d2",
+      "authorId": "m2",
+      "author": "Theo Vance",
+      "authorAvatar": "/assets/images/marketers/theo-vance.jpg",
+      "title": "Weekly testing rhythm for small paid budgets",
+      "content": "Under a few thousand a month, how many creative tests are you running per week before the data stops meaning anything? Sharing my two-test cadence below.",
+      "tags": [
+        "Growth Marketing",
+        "Performance Marketing"
+      ],
+      "commentCount": 6,
+      "createdAt": "2026-10-23T17:30:00.000Z"
+    },
+    {
+      "id": "d3",
+      "authorId": "m3",
+      "author": "Noor Haddad",
+      "authorAvatar": "/assets/images/marketers/noor-haddad.jpg",
+      "title": "Hooks that sound like a person",
+      "content": "Collecting first lines that do not read like ad copy. Drop the opening line of your best-performing short-form piece from this quarter.",
+      "tags": [
+        "Content",
+        "Ad Copywriting"
+      ],
+      "commentCount": 9,
+      "createdAt": "2026-10-22T10:15:00.000Z"
+    },
+    {
+      "id": "d4",
+      "authorId": "arlinda-kaloshi",
+      "authorUid": "arlinda-kaloshi",
+      "author": "Arlinda Kaloshi",
+      "authorAvatar": "",
+      "title": "How do you review AI-drafted posts before they go out?",
+      "content": "We draft first passes with agents, and a person approves every post before it is scheduled. How do other teams split that review: one reviewer per channel, or one per language?",
+      "tags": [
+        "AI Tools",
+        "Content"
+      ],
+      "commentCount": 3,
+      "createdAt": "2026-10-19T09:30:00.000Z"
+    },
+    {
+      "id": "d5",
+      "authorId": "arlinda-kaloshi",
+      "authorUid": "arlinda-kaloshi",
+      "author": "Arlinda Kaloshi",
+      "authorAvatar": "",
+      "title": "Bilingual content: separate posts or one mixed post?",
+      "content": "Our rule is one language per post, with Albanian and English versions published separately. Has anyone tested a single mixed post against two clean ones?",
+      "tags": [
+        "Content"
+      ],
+      "commentCount": 5,
+      "createdAt": "2026-10-05T14:00:00.000Z"
+    }
+  ],
+  "users": [
+    {
+      "uid": "arlinda-kaloshi",
+      "fullName": "Arlinda Kaloshi",
+      "displayName": "Arlinda Kaloshi",
+      "currentRole": "Head of Growth & Marketing, Creative Hub Kosovo",
+      "bio": "I build marketing systems that keep working after I log off: the content pipeline, the routing and the playbook, so growth stops depending on whoever happens to be in the room. I lead growth and marketing at Creative Hub Kosovo, mentor learners in the Digital Marketing Academy, and co-founded AdGate in 2025. I write and work in Albanian, English, and Norwegian.",
+      "skills": [
+        "Brand Strategy",
+        "Content Architecture",
+        "Campaign Design",
+        "Growth Strategy",
+        "Paid & Organic Social",
+        "AI Agent Workflows",
+        "Mentoring"
+      ],
+      "qualifications": [
+        {
+          "type": "role",
+          "title": "Head of Growth & Marketing",
+          "organization": "Creative Hub Kosovo",
+          "period": "Current"
+        },
+        {
+          "type": "role",
+          "title": "Co-founder",
+          "organization": "AdGate",
+          "period": "2025"
+        },
+        {
+          "type": "role",
+          "title": "Social media, advertising and content",
+          "organization": "Mbresa Digital Agency",
+          "period": ""
+        },
+        {
+          "type": "degree",
+          "title": "Bachelor's degree",
+          "organization": "UBT, University for Business and Technology",
+          "period": ""
+        },
+        {
+          "type": "certification",
+          "title": "Digital Marketing Academy",
+          "organization": "Creative Hub Kosovo",
+          "period": "2021 to 2022"
+        },
+        {
+          "type": "certification",
+          "title": "HR, Recruitment & Leadership",
+          "organization": "Creative Hub Kosovo",
+          "period": "2022 to 2023"
+        },
+        {
+          "type": "certification",
+          "title": "Women in Leadership",
+          "organization": "",
+          "period": ""
+        },
+        {
+          "type": "certification",
+          "title": "Graphic Design",
+          "organization": "",
+          "period": ""
+        }
+      ],
+      "links": {
+        "website": "https://hubsy.netlify.app/",
+        "github": "https://github.com/arlinda-k14",
+        "linkedin": "https://www.linkedin.com/in/arlinda-kaloshi/",
+        "newsletter": ""
+      },
+      "avatar": "/assets/images/members/arlinda-kaloshi-1793101240687.jpg",
+      "role": "member",
+      "membershipTier": "pro",
+      "savedArticles": [],
+      "savedEvents": [],
+      "createdAt": "2026-09-24T09:00:00.000Z",
+      "email": "arlinda@creativehubkos.com",
+      "seeded": true
+    }
+  ],
+  "comments": [
+    {
+      "id": "c1",
+      "discussionId": "d2",
+      "authorUid": "arlinda-kaloshi",
+      "authorId": "arlinda-kaloshi",
+      "author": "Arlinda Kaloshi",
+      "content": "We write the stop rule before launch: the metric, the threshold and the date we check it. If a test misses, we pause and rewrite the hook before adding budget.",
+      "createdAt": "2026-10-23T19:05:00.000Z"
+    },
+    {
+      "id": "c2",
+      "discussionId": "d3",
+      "authorUid": "arlinda-kaloshi",
+      "authorId": "arlinda-kaloshi",
+      "author": "Arlinda Kaloshi",
+      "content": "Reading the hook out loud catches most of it. If it sounds like an ad when you say it, it reads like one too.",
+      "createdAt": "2026-10-22T12:40:00.000Z"
+    }
+  ],
+  "resources": [
+    {
+      "id": "r1",
+      "title": "Campaign Stop-Rule Worksheet",
+      "description": "Agree the metric, threshold and check date before a campaign spends anything.",
+      "category": "Growth Playbooks",
+      "type": "Worksheet (Markdown)",
+      "tier": "free",
+      "fileUrl": "/assets/resources/campaign-stop-rule-worksheet.md",
+      "downloadCount": 0
+    },
+    {
+      "id": "r2",
+      "title": "Bilingual Content Calendar",
+      "description": "A content calendar with channel, pillar, language and CTA columns. Import it into Notion as a database.",
+      "category": "Notion Templates",
+      "type": "Notion database (CSV import)",
+      "tier": "pro",
+      "fileUrl": "/assets/resources/content-calendar-template.csv",
+      "downloadCount": 0
+    }
+  ]
+}
