@@ -22,6 +22,7 @@ const entries = [
   join(root, 'src/entries/profile.js'),
   join(root, 'src/entries/home.js'),
   join(root, 'src/entries/hire-marketers.js'),
+  join(root, 'src/entries/hire-us.js'),
   join(root, 'src/entries/marketer-profile.js'),
   join(root, 'src/entries/events.js'),
   join(root, 'src/entries/submit-event.js'),
@@ -57,7 +58,7 @@ const htmlFiles = [
   'index.html', 'sign-in.html', 'onboarding.html', 'dashboard.html', 
   'courses.html', 'course-view.html', 'resources.html', 
   'forum.html', 'forum-thread.html', 'mentors.html', 'tools.html', 'profile.html',
-  'hire-marketers.html', 'marketer-profile.html', 'events.html', 'submit-event.html',
+  'hire-marketers.html', 'hire-us.html', 'marketer-profile.html', 'events.html', 'submit-event.html',
   'blog.html', 'newsletter.html', 'admin-dashboard.html', 'admin-panel.html', 'saved-resources.html'
 ];
 for (const f of htmlFiles) {
